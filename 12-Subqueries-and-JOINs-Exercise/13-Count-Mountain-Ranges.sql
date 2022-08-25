@@ -1,0 +1,7 @@
+SELECT m_c.`country_code`, COUNT(m.`mountain_range`) AS `mountain_range`
+FROM `mountains_countries` AS m_c
+JOIN `mountains` AS m
+ON m_c.mountain_id = m.id
+WHERE m_c.`country_code` IN ('BG', 'RU', 'US')
+GROUP BY m_c.`country_code`
+ORDER BY `mountain_range` DESC ;
